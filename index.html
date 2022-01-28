@@ -23,11 +23,7 @@
 
       <div class="calculator">
         <div class="screen py-5 px-1 bg-light mb-2 rounded text-center fw-bold border">
-          <template v-if="result !== null">
-            {{ result }}
-          </template>
-
-          <template v-else-if="num1 !== null && num1 !== ''">
+          <template v-if="num1 !== null && num1 !== ''">
             <template v-if="num1 !== null">
               {{ num1 }}
             </template>

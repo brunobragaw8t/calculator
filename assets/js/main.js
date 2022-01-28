@@ -2,8 +2,6 @@
  * Vue
  */
 
-// TODO: Transfer result to num1, to calculate a second time.
-
 const app = Vue.createApp({
     data() {
         return {
@@ -41,6 +39,7 @@ const app = Vue.createApp({
         setOperator(op) {
             if (this.num1 !== null && this.num1 !== '') {
                 this.operator = op;
+                this.result = null;
             }
         },
 
@@ -64,22 +63,31 @@ const app = Vue.createApp({
         },
 
         submit() {
-            switch (this.operator) {
-                case '/':
-                    this.result = Number(this.num1) / Number(this.num2);
-                    break;
+            if (
+                this.num1 !== null && this.num1 !== ''
+                && this.operator !== null
+                && this.num2 !== null && this.num2 !== ''
+            ) {
+                switch (this.operator) {
+                    case '/':
+                        this.result = this.num1 = Number(this.num1) / Number(this.num2);
+                        break;
 
-                case '*':
-                    this.result = Number(this.num1) * Number(this.num2);
-                    break;
+                    case '*':
+                        this.result = this.num1 = Number(this.num1) * Number(this.num2);
+                        break;
 
-                case '-':
-                    this.result = Number(this.num1) - Number(this.num2);
-                    break;
+                    case '-':
+                        this.result = this.num1 = Number(this.num1) - Number(this.num2);
+                        break;
 
-                case '+':
-                    this.result = Number(this.num1) + Number(this.num2);
-                    break;
+                    case '+':
+                        this.result = this.num1 = Number(this.num1) + Number(this.num2);
+                        break;
+                }
+
+                this.operator = null;
+                this.num2 = null;
             }
         },
     },
