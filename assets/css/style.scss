@@ -1,0 +1,68 @@
+/**
+ * Variables
+ */
+
+// Colors
+$primary: #009688;
+
+
+/**
+ * Container
+ */
+
+$container-max-widths: (
+    sm: 300px,
+    md: 300px,
+    lg: 300px,
+    xl: 300px,
+    xxl: 300px
+);
+
+
+/**
+ * Modules
+ */
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+
+/**
+ * Calculator
+ */
+
+.calculator {
+    .dial {
+        .numbers {
+            display: flex;
+            flex-wrap: wrap;
+
+            .btn {
+                width: 31.333%;
+                margin-top: 3%;
+                margin-left: 3%;
+            }
+
+            .btn:nth-child(-n+3) {
+                margin-top: 0;
+            }
+
+            .btn:nth-child(3n+1) {
+                margin-left: 0;
+            }
+
+            .btn:nth-last-child(-n+4) {
+                width: 22.75%;
+            }
+
+            .btn:last-child {
+                margin-left: 3%;
+            }
+        }
+
+        .operators {
+            .btn {
+                width: 100%;
+            }
+        }
+    }
+}

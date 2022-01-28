@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+
+  <!--============================================================
+  == CSS -->
+
+  <!-- Theme -->
+  <link
+    href="assets/css/style.min.css"
+    type="text/css"
+    rel="stylesheet"
+  >
+</head>
+<body>
+  <div id="app" class="py-5">
+    <div class="container">
+      <h1 class="text-center text-primary">Calculator</h1>
+
+      <div class="calculator">
+        <div class="screen py-5 px-1 bg-light mb-2 rounded text-center fw-bold border">
+          <template v-if="result !== null">
+            {{ result }}
+          </template>
+
+          <template v-else-if="num1 !== null && num1 !== ''">
+            <template v-if="num1 !== null">
+              {{ num1 }}
+            </template>
+
+            <template v-if="operator !== null">
+              {{ operator }}
+            </template>
+
+            <template v-if="num2 !== null">
+              {{ num2 }}
+            </template>
+          </template>
+
+          <template v-else>&nbsp;</template>
+        </div><!-- .screen -->
+
+        <div class="dial row">
+          <div class="numbers col-8">
+            <button class="btn btn-outline-secondary" v-for="n in 10" :key="n" @click="type(10 - n)">
+              {{ 10 - n }}
+            </button>
+
+            <button class="btn btn-outline-secondary" @click="type('.')">
+              .
+            </button>
+
+            <button class="btn btn-outline-secondary" @click="clear()">
+              C
+            </button>
+
+            <button class="btn btn-outline-secondary" @click="backspace()">
+              ⌫
+            </button>
+          </div><!-- .numbers -->
+
+          <div class="operators col-4">
+            <button class="btn btn-outline-secondary btn-sm mb-1" @click="setOperator('/')">
+              /
+            </button>
+
+            <button class="btn btn-outline-secondary btn-sm mb-1" @click="setOperator('*')">
+              *
+            </button>
+
+            <button class="btn btn-outline-secondary btn-sm mb-1" @click="setOperator('-')">
+              -
+            </button>
+
+            <button class="btn btn-outline-secondary btn-sm mb-1" @click="setOperator('+')">
+              +
+            </button>
+
+            <button class="btn btn-outline-secondary btn-sm" @click="submit()">
+              =
+            </button>
+          </div><!-- .operators -->
+        </div><!-- .dial -->
+      </div><!-- .calculator -->
+    </div><!-- .container -->
+  </div><!-- #app -->
+
+
+  <!--============================================================
+  == JavaScript -->
+
+  <!-- Bootstrap -->
+  <script
+    src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+  ></script>
+
+  <!-- Vue -->
+  <script src="https://unpkg.com/vue@next"></script>
+
+  <!-- Theme -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
