@@ -22,7 +22,7 @@
       <h1 class="text-center text-primary">Calculator</h1>
 
       <div class="calculator">
-        <div class="screen py-5 px-1 bg-light mb-2 rounded text-center fw-bold border">
+        <div class="screen py-5 px-1 bg-primary bg-opacity-10 mb-2 rounded text-center fw-bold border border-primary text-primary">
           <template v-if="num1 !== null && num1 !== ''">
             <template v-if="num1 !== null">
               {{ num1 }}
@@ -60,23 +60,23 @@
           </div><!-- .numbers -->
 
           <div class="operators col-4">
-            <button class="btn btn-outline-secondary btn-sm mb-1" @click="setOperator('/')">
+            <button class="btn btn-outline-primary btn-sm mb-1" @click="setOperator('/')">
               /
             </button>
 
-            <button class="btn btn-outline-secondary btn-sm mb-1" @click="setOperator('*')">
+            <button class="btn btn-outline-primary btn-sm mb-1" @click="setOperator('*')">
               *
             </button>
 
-            <button class="btn btn-outline-secondary btn-sm mb-1" @click="setOperator('-')">
+            <button class="btn btn-outline-primary btn-sm mb-1" @click="setOperator('-')">
               -
             </button>
 
-            <button class="btn btn-outline-secondary btn-sm mb-1" @click="setOperator('+')">
+            <button class="btn btn-outline-primary btn-sm mb-1" @click="setOperator('+')">
               +
             </button>
 
-            <button class="btn btn-outline-secondary btn-sm" @click="submit()">
+            <button class="btn btn-outline-primary btn-sm" @click="submit()">
               =
             </button>
           </div><!-- .operators -->
