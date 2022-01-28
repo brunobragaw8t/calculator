@@ -39,7 +39,7 @@ const app = Vue.createApp({
         },
 
         setOperator(op) {
-            if (this.num1 !== null) {
+            if (this.num1 !== null && this.num1 !== '') {
                 this.operator = op;
             }
         },
