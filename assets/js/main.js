@@ -51,10 +51,12 @@ const app = Vue.createApp({
         },
 
         backspace() {
-            if (this.num2 !== null) {
+            if (this.num2 !== null && this.num2 !== '') {
                 const num2_array = this.num2.split('');
                 num2_array.pop();
                 this.num2 = num2_array.join('');
+            } else if (this.operator !== null) {
+                this.operator = null;
             } else {
                 const num1_array = this.num1.split('');
                 num1_array.pop();
